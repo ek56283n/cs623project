@@ -1,8 +1,3 @@
-# Sample of Python / PostgreSQL 
-# ACID is implemented
-
-# pip install psycopg2
-# pip install tabulate
 
 import psycopg2
 from tabulate import tabulate
@@ -14,9 +9,9 @@ print("Beginning")
 
 con = psycopg2.connect(
     host="localhost",
-    database="testdb",
+    database="postgres",
     user="postgres",
-    password="postgres")
+    password="@lphaSapphire2018!")
 
 print(con)
 
@@ -29,7 +24,7 @@ con.autocommit = False
 try:
     cur = con.cursor()
     # QUERY
-    cur.execute("insert into student values (10, 'stud1')")
+    cur.execute("DELETE FROM depot WHERE depid = 'd1' ")
 
 except (Exception, psycopg2.DatabaseError) as err:
     print(err)
